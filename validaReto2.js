@@ -35,7 +35,7 @@ const validarFormulario = () => {
         document.getElementById("nombre").style.border = '';
     }
 
-    if (!/^[0-9]{2}\/[0-9]{2}\/[0-9]{4}$/.test(fechaNac.value) || parseInt(fechaPartida[0], 10)>31 || parseInt(fechaPartida[1], 12)>10) {
+    if (!/^[0-9]{2}\/[0-9]{2}\/[0-9]{4}$/.test(fechaNac.value) || parseInt(fechaPartida[0], 10)>31 || parseInt(fechaPartida[1], 10)>12) {
         document.getElementById("errorFechaNac").innerHTML = "La fecha debe cumplir formato DD/MM/YYYY, los días no pueden ser mayores a 31 ni el mes mayor a 12";
         enviarBoolean= false;
         document.getElementById("fechaNac").style.border = '1px solid red';
