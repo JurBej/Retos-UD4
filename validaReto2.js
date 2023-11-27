@@ -8,8 +8,14 @@ let ski = document.getElementById("ski");
 let numeroSocio = document.getElementById("numeroSocio");
 let categoria = document.querySelector('input[name="categoria"]:checked');
 
+/**
+ * Método que valida los campos correspondientes mediante expresiones regulares.
+ * Si un campo no valida la regex se mostrará al lado el formato que debe cumplir en color rojo y el input tendrá un borde rojo.
+ * @returns Devulve true si se validan todos los campos o false si al menos uno de ellos no es correcto.
+ */
 const validarFormulario = () => {
     let enviarBoolean = true;
+    let fechaPartida = fechaNac.value.split("/");
 
     if (!(/^[A-Za-z]\d{8}[A-Za-z]$/.test(id.value))) {
         document.getElementById("errorIdentificador").innerHTML = "El ID es obligatorio y debe tener 1 letra, 8 cifras y 1 letra, en ese orden";
@@ -29,8 +35,8 @@ const validarFormulario = () => {
         document.getElementById("nombre").style.border = '';
     }
 
-    if (!/^[0-9]{2}\/[0-9]{2}\/[0-9]{4}$/.test(fechaNac.value)) {
-        document.getElementById("errorFechaNac").innerHTML = "La fecha debe cumplir formato DD/MM/YYYY";
+    if (!/^[0-9]{2}\/[0-9]{2}\/[0-9]{4}$/.test(fechaNac.value) || parseInt(fechaPartida[0], 10)>31 || parseInt(fechaPartida[1], 12)>10) {
+        document.getElementById("errorFechaNac").innerHTML = "La fecha debe cumplir formato DD/MM/YYYY, los días no pueden ser mayores a 31 ni el mes mayor a 12";
         enviarBoolean= false;
         document.getElementById("fechaNac").style.border = '1px solid red';
     } else {
@@ -77,6 +83,10 @@ const validarFormulario = () => {
     return enviarBoolean;
 }
 
+/**
+ * Método que comprueba si el checkbox ski está marcado o no, 
+ * si está marcado muestra los campos que contiene el contenedor camposClubSki, sino los oculta.
+ */
 const mostrarCamposClubSki = () => {
     let camposClub = document.getElementById("camposClubSki");
     let checkboxClubSki = document.getElementById("ski");
@@ -88,6 +98,8 @@ const mostrarCamposClubSki = () => {
     }
 }
 
+/* Le añadimos al formulario un evento de tipo submit. Prevenimos el envio por defecto y
+en caso de que el formulario sea validado se realiza el envio del mismo */
 document.getElementById("formulario").addEventListener("submit", function (event) {
     event.preventDefault();
     if (validarFormulario()) {
@@ -96,4 +108,5 @@ document.getElementById("formulario").addEventListener("submit", function (event
     }
 });
 
+//Añadimos al checkbox ski un evento de tipo change que evaluará el método mostrarCamposClubSki para mostrar o no ciertos campos
 document.getElementById("ski").addEventListener("change", mostrarCamposClubSki);

@@ -15,13 +15,21 @@ let cartasSeleccionadas = [];
 let aciertos = 0;
 let movimientos = 0;
 
+/**
+ * Método que actua como escuchador, si existen 2 cartas seleccionadas se invoca al método evaluarCartas pasado 1seg
+ * @param {object} event 
+ * @returns Si seleccionamos una carta previamente seleccionada o el número de cartas seleccionadas es mayor o igual que 2
+ * se realiza un return vacio, es decir, saldrá del método sin realizar nada.
+ */
 const escuchador = (event) => {
     let carta = event.target;
 
+    //Controlamos que no se pueda seleccionar una carta previamente seleccionada ni más de 2 cartas a la vez
     if (cartasSeleccionadas.includes(carta) || cartasSeleccionadas.length >= 2) {
         return;
     }
 
+    //Obtenemos el íncide al cual tendremos que acceder dentro del arrayFotos y cambiamos el src para mostrar la fruta seleccionada
     let indice = parseInt(carta.id.substring(carta.id.length - 1), 10) - 1;
     carta.src = arrayFotos[indice];
     cartasSeleccionadas.push(carta);
@@ -32,6 +40,10 @@ const escuchador = (event) => {
     }
 }
 
+/**
+ * Método que evalua si 2 cartas son iguales, si son iguales se aplica un borde y se elimina su Event Listener.
+ * Si no son iguales volvemos a mostrar la carta boca bajo.
+ */
 const evaluarCartas = () => {
     let carta1 = cartasSeleccionadas[0];
     let carta2 = cartasSeleccionadas[1];
@@ -57,6 +69,7 @@ const evaluarCartas = () => {
     }
 }
 
+//Bucle for para añadir un Event Listener de tipo click a cada carta
 for (let i = 1; i <= 8; i++) {
     let carta = document.getElementById("carta" + i);
     carta.addEventListener("click", escuchador);
