@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Reto 3</h1>
+    <p>Fecha y hora de creación: en formato «dd/mm/aaaa hh:mm».</p>
+    <label for="fecha">Fecha y hora de creación: </label>
+    <input type="text" name="fecha" id="fecha" placeholder="dd/mm/aaaa hh:mm">
+    <button id="btn-fecha">Validar</button>
+    <span id="span-fecha"></span>
+
+    <p>Cocinero: será un nombre en clave formado por dos letras en mayúscula, un símbolo y cuatro dígitos (ej. WW$1234)</p>
+    <label for="cocinero">Cocinero: </label>
+    <input type="text" name="cocinero" id="cocinero" placeholder="WW$1234">
+    <button id="btn-cocinero">Validar</button>
+    <span id="span-cocinero"></span>
+
+    <p>Destinatario: estará formado por dos o tres letras mayúsculas correspondientes al estado, un guión bajo, el nombre de la ciudad en minúsculas, dos puntos, y el código de distrito de 4 digitos (ej. NM_alburquerque:1234).</p>
+    <label for="destinatario">Destinatario: </label>
+    <input type="text" name="destinatario" id="destinatario" placeholder="NM_alburquerque:1234">
+    <button id="btn-destinatario">Validar</button>
+    <span id="span-destinatario"></span>
+
+    <p>Gramos: será un número del 1000 al 5000.</p>
+    <label for="gramos">Gramos: </label>
+    <input type="text" name="gramos" id="gramos" placeholder="Del 1000 al 5000">
+    <button id="btn-gramos">Validar</button>
+    <span id="span-gramos"></span>
+
+    <p>Composición: estará formado por una cantidad en gramos seguida de dos conjuntos de una o dos letras seguidas o no de un número. (ej. 200gC3OH7)</p>
+    <label for="composicion">Compisición: </label>
+    <input type="text" name="composicion" id="composicion" placeholder="200gC3OH7">
+    <button id="btn-composicion">Validar</button>
+    <span id="span-composicion"></span>
+
+    <p>Número de cuenta de EEUU: supongamos que un número de cuenta estadounidense tiene el siguiente formato:</p>
+    <label for="numCuenta">Número de cuenta de EEUU: </label>
+    <input type="text" name="numCuenta" id="numCuenta" placeholder="AA00-000000000000-00">
+    <button id="btn-numCuenta">Validar</button>
+    <span id="span-numCuenta"></span>
+
+    <script src="reto3.js"></script>
+</body>
+</html>
