@@ -122,7 +122,7 @@ const validaNumCuenta = () => {
         let digitosCorrectos = parteEnteraPrimeros6+parteEnteraSegundos6;
 
         if (sumaLetras == digitosFormateado && digitosLeidos == digitosCorrectos) {
-            document.getElementById("span-numCuenta").innerHTML = "✅";
+            document.getElementById("span-numCuenta").innerHTML = "✅ "+numCuenta.replaceAll("-", "");
         } else {
             document.getElementById("span-numCuenta").innerHTML = "🛑";
         }
