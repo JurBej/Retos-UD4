@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/styleReto2.css">
+</head>
+<body>
+    <div class="localStorage">
+        <p id="diario">Número de forfaits diario: </p>
+        <button id="reset-forfaits">Reset</button>
+        <p id="diario-ski">Número de socios club de ski diario: </p>
+        <button id="reset-socios">Reset</button>
+    </div>
+
+    <form id="formulario">
+        <label for="id">Identificador: </label>
+        <input type="text" name="id" id="id">
+        <span id="errorIdentificador" class="errorLetra"></span><br>
+
+        <label for="nombre">Nombre y apellidos: </label>
+        <input type="text" name="nombre" id="nombre">
+        <span id="errorNombre" class="errorLetra"></span><br>
+
+        <label for="fechaNac">Fecha de Nacimiento: </label>
+        <input type="text" name="fechaNac" id="fechaNac">
+        <span id="errorFechaNac" class="errorLetra"></span><br>
+
+        <label for="email">Email: </label>
+        <input type="email" name="email" id="email">
+        <span id="errorEmail" class="errorLetra"></span><br>
+
+        <label for="tlf">Teléfono: </label>
+        <input type="tel" name="tlf" id="tlf">
+        <span id="errorTlf" class="errorLetra"></span><br>
+
+        <label for="edad">Edad: </label>
+        <select name="edad" id="edad">
+            <option value="Nino">Niño</option>
+            <option value="Adulto">Adulto</option>
+            <option value="Jubilado">Jubilado</option>
+        </select><br>
+
+        <label for="ski">Club de Ski: </label>
+        <input type="checkbox" name="ski" id="ski" value="si"><br>
+
+        <div id="camposClubSki" style="display: none;">
+            <label for="numeroSocio">Número de Socio: </label>
+            <input type="number" id="numeroSocio" name="numeroSocio">
+            <span id="errorNumeroSocio" class="errorLetra"></span><br>
+
+            <label>Categoría:</label>
+            <input type="radio" id="infantil" name="categoria" value="infantil">
+            <label for="infantil">Infantil</label>
+            <input type="radio" id="juvenil" name="categoria" value="juvenil">
+            <label for="juvenil">Juvenil</label>
+            <input type="radio" id="senior" name="categoria" value="senior">
+            <label for="senior">Senior</label>
+            <span id="errorCategoria" class="errorLetra"></span><br>
+        </div>
+
+        <input type="submit" name="enviar" id="enviar" value="Enviar">
+    </form>
+
+    <script src="validaReto4.js"></script>
+</body>
+</html>
