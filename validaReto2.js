@@ -6,7 +6,7 @@ let tlf = document.getElementById("tlf");
 let edad = document.getElementById("edad");
 let ski = document.getElementById("ski");
 let numeroSocio = document.getElementById("numeroSocio");
-let categoria = document.querySelector('input[name="categoria"]:checked');
+
 
 /**
  * Método que valida los campos correspondientes mediante expresiones regulares.
@@ -63,6 +63,7 @@ const validarFormulario = () => {
     }
 
     if (ski.checked) {
+        let categoria = document.querySelector('input[name="categoria"]:checked');
         if (!/^[0-9]{5}/.test(numeroSocio.value) || numeroSocio.value<10000) {
             document.getElementById("errorNumeroSocio").innerHTML = "El numero de socio debe ser un número de 10000 a 99999";
             enviarBoolean= false;
@@ -76,6 +77,7 @@ const validarFormulario = () => {
             document.getElementById("errorCategoria").innerHTML = "Selecciona una categoria";
             enviarBoolean= false;
         } else {
+            console.log(categoria.value);
             document.getElementById("errorCategoria").innerHTML = "";
         }
     }
