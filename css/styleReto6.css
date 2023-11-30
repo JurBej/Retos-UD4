@@ -1,0 +1,11 @@
+.carta {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+    max-width: 200px;
+    float: left;
+}
+.carta img {
+    max-width: 100%;
+    height: auto;
+}
