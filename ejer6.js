@@ -18,6 +18,14 @@ const generarCarta = () => {
     divCarta.appendChild(img);
     divCarta.appendChild(parrafo);
     divCarta.className = 'carta';
+    let botonBorrar = document.createElement("button");
+    botonBorrar.innerHTML = "Borrar";
+    botonBorrar.id = "botonBorrar";
+    divCarta.appendChild(botonBorrar);
+    botonBorrar.addEventListener("click", function () {
+        let carta = this.parentNode;
+        carta.parentNode.removeChild(carta);
+    })
 
     document.getElementById('cartaGenerada').appendChild(divCarta);
     document.getElementById('cartaGenerada').style.display = 'block';
