@@ -1,0 +1,18 @@
+[
+    {
+        "color": "rojo",
+        "translation": {
+            "ingles": "red",
+            "espanol": "rojo"
+        },
+        "imagen": "img/rojo.jpg"
+    },
+    {
+        "color": "azul",
+        "translation": {
+            "ingles": "blue",
+            "espanol": "azul"
+        },
+        "imagen": "img/azul.png"
+    }
+]

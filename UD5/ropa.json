@@ -1,0 +1,18 @@
+[
+    {
+        "prenda": "camiseta",
+        "translation": {
+            "ingles": "t-shirt",
+            "espanol": "camiseta"
+        },
+        "imagen": "img/camiseta.jpg"
+    },
+    {
+        "prenda": "pantalón",
+        "translation": {
+            "ingles": "pants",
+            "espanol": "pantalón"
+        },
+        "imagen": "img/pantalon.jpg"
+    }
+]

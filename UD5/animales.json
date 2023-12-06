@@ -1,0 +1,18 @@
+[
+    {
+        "animal": "perro",
+        "translation": {
+            "ingles": "dog",
+            "espanol": "perro"
+    },
+        "imagen": "img/perro.jpg"
+    },
+    {
+        "animal": "gato",
+        "translation": {
+            "ingles": "cat",
+            "espanol": "gato"
+        },
+        "imagen": "img/gato.jpeg"
+    }
+]
